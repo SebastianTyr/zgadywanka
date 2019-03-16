@@ -26,6 +26,6 @@ Console.WriteLine(x);
 Rzuc okiem na strone [tekst](http://e.sei.edu.pl) aby....
 
 | xxx | yyy |
-+-----+-----+
+|-----|-----|
 | 1 | 2 |
 | a | b |
