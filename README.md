@@ -1,0 +1,2 @@
+# zgadywanka
+Projekt gry - studia
