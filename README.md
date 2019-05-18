@@ -1,4 +1,4 @@
-# zgadywanka
+# Zgadywanka
 Projekt gry - studia (Gra za dużo za mało)
 
 #Krok 1 - wariant monolityczny
