@@ -26,11 +26,30 @@ namespace GraGUI
 
         private void buttonWylosuj_Click(object sender, EventArgs e)
         {
-            //try-catch
-            int zakresOd = int.Parse(textBoxZakresOd.Text);
-            int zakresDo = int.Parse(textBoxZakresDo.Text);
+            try
+            {
+                int zakresOd = int.Parse(textBoxZakresOd.Text);
+                int zakresDo = int.Parse(textBoxZakresDo.Text);
 
-            g = new Gra(zakresOd, zakresDo);
+                g = new Gra(zakresOd, zakresDo);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Niepoprawny fomrat danych", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxZakresOd.Clear();
+                textBoxZakresDo.Clear();
+            }
+
+            groupBoxRozgrywka.Visible = true;
+
+            labelTime.Text = "00:00:00";
+            buttonWylosuj.Enabled = false;
+        }
+
+        private void buttonInfo_Click(object sender, EventArgs e)
+        {
+            Info info = new Info();
+            info.Show();
         }
     }
 }

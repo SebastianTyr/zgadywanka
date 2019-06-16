@@ -14,7 +14,7 @@ namespace ModelGry
 
         public int LicznikRuchow { get; private set; } = 0;
 
-        // TODO: historia rozgrywki
+
         public Gra(int min, int max)
         {
             ZakresOd = min;
