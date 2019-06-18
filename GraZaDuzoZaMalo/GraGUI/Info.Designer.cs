@@ -28,83 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelInfoGra = new System.Windows.Forms.Label();
+            this.labelAutor = new System.Windows.Forms.Label();
+            this.labelOpis1 = new System.Windows.Forms.Label();
+            this.labelOpis2 = new System.Windows.Forms.Label();
+            this.labelStopka1 = new System.Windows.Forms.Label();
+            this.labelStopka2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // labelInfoGra
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(57, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Informacje o Grze";
+            this.labelInfoGra.AutoSize = true;
+            this.labelInfoGra.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelInfoGra.Location = new System.Drawing.Point(57, 55);
+            this.labelInfoGra.Name = "labelInfoGra";
+            this.labelInfoGra.Size = new System.Drawing.Size(0, 31);
+            this.labelInfoGra.TabIndex = 0;
             // 
-            // label2
+            // labelAutor
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(58, 139);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(252, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Autor: Sebastian Tyralski";
+            this.labelAutor.AutoSize = true;
+            this.labelAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelAutor.Location = new System.Drawing.Point(58, 139);
+            this.labelAutor.Name = "labelAutor";
+            this.labelAutor.Size = new System.Drawing.Size(0, 25);
+            this.labelAutor.TabIndex = 1;
             // 
-            // label3
+            // labelOpis1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(21, 206);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(342, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Realizowana w ramach projektu semestralnego";
+            this.labelOpis1.AutoSize = true;
+            this.labelOpis1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelOpis1.Location = new System.Drawing.Point(21, 206);
+            this.labelOpis1.Name = "labelOpis1";
+            this.labelOpis1.Size = new System.Drawing.Size(0, 20);
+            this.labelOpis1.TabIndex = 2;
             // 
-            // label4
+            // labelOpis2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(88, 242);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(215, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "przy wsparciu na ćwiczeniach";
+            this.labelOpis2.AutoSize = true;
+            this.labelOpis2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelOpis2.Location = new System.Drawing.Point(88, 242);
+            this.labelOpis2.Name = "labelOpis2";
+            this.labelOpis2.Size = new System.Drawing.Size(0, 20);
+            this.labelOpis2.TabIndex = 3;
             // 
-            // label5
+            // labelStopka1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(161, 363);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Wersja 1.0";
+            this.labelStopka1.AutoSize = true;
+            this.labelStopka1.Location = new System.Drawing.Point(161, 363);
+            this.labelStopka1.Name = "labelStopka1";
+            this.labelStopka1.Size = new System.Drawing.Size(0, 13);
+            this.labelStopka1.TabIndex = 4;
             // 
-            // label6
+            // labelStopka2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(117, 389);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Copyright (c) all rights reserved";
+            this.labelStopka2.AutoSize = true;
+            this.labelStopka2.Location = new System.Drawing.Point(117, 389);
+            this.labelStopka2.Name = "labelStopka2";
+            this.labelStopka2.Size = new System.Drawing.Size(0, 13);
+            this.labelStopka2.TabIndex = 5;
             // 
             // Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 450);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelStopka2);
+            this.Controls.Add(this.labelStopka1);
+            this.Controls.Add(this.labelOpis2);
+            this.Controls.Add(this.labelOpis1);
+            this.Controls.Add(this.labelAutor);
+            this.Controls.Add(this.labelInfoGra);
             this.Name = "Info";
             this.Text = "Info";
             this.ResumeLayout(false);
@@ -114,11 +108,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelInfoGra;
+        private System.Windows.Forms.Label labelAutor;
+        private System.Windows.Forms.Label labelOpis1;
+        private System.Windows.Forms.Label labelOpis2;
+        private System.Windows.Forms.Label labelStopka1;
+        private System.Windows.Forms.Label labelStopka2;
     }
 }

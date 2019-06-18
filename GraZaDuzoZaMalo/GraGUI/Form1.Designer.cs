@@ -38,10 +38,16 @@
             this.buttonHistoria = new System.Windows.Forms.Button();
             this.buttonInfo = new System.Windows.Forms.Button();
             this.groupBoxRozgrywka = new System.Windows.Forms.GroupBox();
-            this.labelPropozycja = new System.Windows.Forms.Label();
-            this.textBoxPropozycja = new System.Windows.Forms.TextBox();
-            this.labelOdpowiedz = new System.Windows.Forms.Label();
+            this.labelLicznik = new System.Windows.Forms.Label();
+            this.labelWylosowana = new System.Windows.Forms.Label();
+            this.buttonSprawdz = new System.Windows.Forms.Button();
+            this.buttonRestart = new System.Windows.Forms.Button();
+            this.buttonPoddaj = new System.Windows.Forms.Button();
             this.labelTime = new System.Windows.Forms.Label();
+            this.labelOdpowiedz = new System.Windows.Forms.Label();
+            this.textBoxPropozycja = new System.Windows.Forms.TextBox();
+            this.labelPropozycja = new System.Windows.Forms.Label();
+            this.buttonInstrukcja = new System.Windows.Forms.Button();
             this.groupBoxLosowanie.SuspendLayout();
             this.groupBoxRozgrywka.SuspendLayout();
             this.SuspendLayout();
@@ -119,36 +125,118 @@
             // 
             // buttonHistoria
             // 
-            this.buttonHistoria.Location = new System.Drawing.Point(12, 381);
+            this.buttonHistoria.Location = new System.Drawing.Point(12, 399);
             this.buttonHistoria.Name = "buttonHistoria";
             this.buttonHistoria.Size = new System.Drawing.Size(75, 23);
             this.buttonHistoria.TabIndex = 2;
             this.buttonHistoria.Text = "Historia";
             this.buttonHistoria.UseVisualStyleBackColor = true;
+            this.buttonHistoria.Click += new System.EventHandler(this.buttonHistoria_Click);
             // 
             // buttonInfo
             // 
-            this.buttonInfo.Location = new System.Drawing.Point(293, 381);
+            this.buttonInfo.Location = new System.Drawing.Point(293, 399);
             this.buttonInfo.Name = "buttonInfo";
             this.buttonInfo.Size = new System.Drawing.Size(75, 23);
             this.buttonInfo.TabIndex = 3;
-            this.buttonInfo.Text = "Info";
+            this.buttonInfo.Text = "O Grze";
             this.buttonInfo.UseVisualStyleBackColor = true;
             this.buttonInfo.Click += new System.EventHandler(this.buttonInfo_Click);
             // 
             // groupBoxRozgrywka
             // 
+            this.groupBoxRozgrywka.Controls.Add(this.labelLicznik);
+            this.groupBoxRozgrywka.Controls.Add(this.labelWylosowana);
+            this.groupBoxRozgrywka.Controls.Add(this.buttonSprawdz);
+            this.groupBoxRozgrywka.Controls.Add(this.buttonRestart);
+            this.groupBoxRozgrywka.Controls.Add(this.buttonPoddaj);
             this.groupBoxRozgrywka.Controls.Add(this.labelTime);
             this.groupBoxRozgrywka.Controls.Add(this.labelOdpowiedz);
             this.groupBoxRozgrywka.Controls.Add(this.textBoxPropozycja);
             this.groupBoxRozgrywka.Controls.Add(this.labelPropozycja);
             this.groupBoxRozgrywka.Location = new System.Drawing.Point(12, 181);
             this.groupBoxRozgrywka.Name = "groupBoxRozgrywka";
-            this.groupBoxRozgrywka.Size = new System.Drawing.Size(369, 179);
+            this.groupBoxRozgrywka.Size = new System.Drawing.Size(369, 212);
             this.groupBoxRozgrywka.TabIndex = 4;
             this.groupBoxRozgrywka.TabStop = false;
             this.groupBoxRozgrywka.Text = "Rozgrywka";
             this.groupBoxRozgrywka.Visible = false;
+            // 
+            // labelLicznik
+            // 
+            this.labelLicznik.AutoSize = true;
+            this.labelLicznik.Location = new System.Drawing.Point(12, 160);
+            this.labelLicznik.Name = "labelLicznik";
+            this.labelLicznik.Size = new System.Drawing.Size(81, 13);
+            this.labelLicznik.TabIndex = 8;
+            this.labelLicznik.Text = "Liczba Ruchów";
+            this.labelLicznik.Visible = false;
+            // 
+            // labelWylosowana
+            // 
+            this.labelWylosowana.AutoSize = true;
+            this.labelWylosowana.Location = new System.Drawing.Point(12, 121);
+            this.labelWylosowana.Name = "labelWylosowana";
+            this.labelWylosowana.Size = new System.Drawing.Size(68, 13);
+            this.labelWylosowana.TabIndex = 7;
+            this.labelWylosowana.Text = "Wylosowana";
+            this.labelWylosowana.Visible = false;
+            // 
+            // buttonSprawdz
+            // 
+            this.buttonSprawdz.Location = new System.Drawing.Point(238, 80);
+            this.buttonSprawdz.Name = "buttonSprawdz";
+            this.buttonSprawdz.Size = new System.Drawing.Size(96, 23);
+            this.buttonSprawdz.TabIndex = 6;
+            this.buttonSprawdz.Text = "Sprawdź";
+            this.buttonSprawdz.UseVisualStyleBackColor = true;
+            this.buttonSprawdz.Click += new System.EventHandler(this.buttonSprawdz_Click);
+            // 
+            // buttonRestart
+            // 
+            this.buttonRestart.Enabled = false;
+            this.buttonRestart.Location = new System.Drawing.Point(238, 141);
+            this.buttonRestart.Name = "buttonRestart";
+            this.buttonRestart.Size = new System.Drawing.Size(96, 23);
+            this.buttonRestart.TabIndex = 5;
+            this.buttonRestart.Text = "Zagraj ponownie";
+            this.buttonRestart.UseVisualStyleBackColor = true;
+            this.buttonRestart.Click += new System.EventHandler(this.buttonRestart_Click);
+            // 
+            // buttonPoddaj
+            // 
+            this.buttonPoddaj.Location = new System.Drawing.Point(238, 112);
+            this.buttonPoddaj.Name = "buttonPoddaj";
+            this.buttonPoddaj.Size = new System.Drawing.Size(96, 23);
+            this.buttonPoddaj.TabIndex = 4;
+            this.buttonPoddaj.Text = "Poddaj się";
+            this.buttonPoddaj.UseVisualStyleBackColor = true;
+            this.buttonPoddaj.Click += new System.EventHandler(this.buttonPoddaj_Click);
+            // 
+            // labelTime
+            // 
+            this.labelTime.Location = new System.Drawing.Point(256, 32);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(100, 23);
+            this.labelTime.TabIndex = 3;
+            this.labelTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelOdpowiedz
+            // 
+            this.labelOdpowiedz.AutoSize = true;
+            this.labelOdpowiedz.Location = new System.Drawing.Point(9, 80);
+            this.labelOdpowiedz.Name = "labelOdpowiedz";
+            this.labelOdpowiedz.Size = new System.Drawing.Size(37, 13);
+            this.labelOdpowiedz.TabIndex = 2;
+            this.labelOdpowiedz.Text = "Status";
+            this.labelOdpowiedz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxPropozycja
+            // 
+            this.textBoxPropozycja.Location = new System.Drawing.Point(136, 35);
+            this.textBoxPropozycja.Name = "textBoxPropozycja";
+            this.textBoxPropozycja.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPropozycja.TabIndex = 1;
             // 
             // labelPropozycja
             // 
@@ -159,42 +247,29 @@
             this.labelPropozycja.TabIndex = 0;
             this.labelPropozycja.Text = "Podaj swoją propozycję:";
             // 
-            // textBoxPropozycja
+            // buttonInstrukcja
             // 
-            this.textBoxPropozycja.Location = new System.Drawing.Point(136, 35);
-            this.textBoxPropozycja.Name = "textBoxPropozycja";
-            this.textBoxPropozycja.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPropozycja.TabIndex = 1;
-            // 
-            // labelOdpowiedz
-            // 
-            this.labelOdpowiedz.AutoSize = true;
-            this.labelOdpowiedz.Location = new System.Drawing.Point(32, 77);
-            this.labelOdpowiedz.Name = "labelOdpowiedz";
-            this.labelOdpowiedz.Size = new System.Drawing.Size(35, 13);
-            this.labelOdpowiedz.TabIndex = 2;
-            this.labelOdpowiedz.Text = "label2";
-            // 
-            // labelTime
-            // 
-            this.labelTime.Location = new System.Drawing.Point(257, 38);
-            this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(100, 23);
-            this.labelTime.TabIndex = 3;
-            this.labelTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonInstrukcja.Location = new System.Drawing.Point(293, 12);
+            this.buttonInstrukcja.Name = "buttonInstrukcja";
+            this.buttonInstrukcja.Size = new System.Drawing.Size(75, 23);
+            this.buttonInstrukcja.TabIndex = 5;
+            this.buttonInstrukcja.Text = "Jak grać";
+            this.buttonInstrukcja.UseVisualStyleBackColor = true;
+            this.buttonInstrukcja.Click += new System.EventHandler(this.buttonInstrukcja_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(393, 444);
+            this.Controls.Add(this.buttonInstrukcja);
             this.Controls.Add(this.groupBoxRozgrywka);
             this.Controls.Add(this.buttonInfo);
             this.Controls.Add(this.buttonHistoria);
             this.Controls.Add(this.groupBoxLosowanie);
             this.Controls.Add(this.buttonNowaGra);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Gra - Losowanie";
             this.groupBoxLosowanie.ResumeLayout(false);
             this.groupBoxLosowanie.PerformLayout();
             this.groupBoxRozgrywka.ResumeLayout(false);
@@ -219,6 +294,12 @@
         private System.Windows.Forms.TextBox textBoxPropozycja;
         private System.Windows.Forms.Label labelPropozycja;
         private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Button buttonRestart;
+        private System.Windows.Forms.Button buttonPoddaj;
+        private System.Windows.Forms.Button buttonInstrukcja;
+        private System.Windows.Forms.Button buttonSprawdz;
+        private System.Windows.Forms.Label labelLicznik;
+        private System.Windows.Forms.Label labelWylosowana;
     }
 }
 
