@@ -16,9 +16,20 @@ namespace GraGUI
     {
         private Gra g;
         public int liczklik = 0;
+        private Timer t = new Timer();
+        private TimeSpan timeSpan;
+        private readonly TimeSpan sekunda = new TimeSpan(0, 0, 1);
         public Form1()
         {
             InitializeComponent();
+            t.Interval = 1000;
+            t.Tick += new EventHandler(this.t_Tick);
+        }
+
+        private void t_Tick(object sender, EventArgs e)
+        {
+            timeSpan = timeSpan.Add(sekunda);
+            labelTime.Text = timeSpan.ToString();
         }
 
         private void buttonNowaGra_Click(object sender, EventArgs e)
@@ -29,13 +40,17 @@ namespace GraGUI
 
         private void buttonWylosuj_Click(object sender, EventArgs e)
         {
+            //liczba kliknięć
             liczklik++;
             try
             {
+                t.Start();
+
                 int Od = int.Parse(textBoxZakresOd.Text);
                 int Do = int.Parse(textBoxZakresDo.Text);
 
                 g = new Gra(Od, Do);
+
                 buttonWylosuj.Enabled = false;
                 groupBoxRozgrywka.Visible = true;
             }
@@ -45,6 +60,10 @@ namespace GraGUI
 
                 textBoxZakresOd.Clear();
                 textBoxZakresDo.Clear();
+
+                t.Stop();
+                timeSpan = new TimeSpan(0, 0, 0);
+                labelTime.Text = "00:00:00";
 
                 buttonWylosuj.Enabled = true;
                 groupBoxRozgrywka.Visible = false;
@@ -56,9 +75,14 @@ namespace GraGUI
                 textBoxZakresOd.Clear();
                 textBoxZakresDo.Clear();
 
+                t.Stop();
+                timeSpan = new TimeSpan(0, 0, 0);
+                labelTime.Text = "00:00:00";
+
                 buttonWylosuj.Enabled = true;
                 groupBoxRozgrywka.Visible = false;
             }
+            labelCzasGry.Text = "";
         }
 
         private void buttonSprawdz_Click(object sender, EventArgs e)
@@ -97,6 +121,9 @@ namespace GraGUI
                         labelWylosowana.Text = "Wylosowana liczba: " + g.CoByloWylosowane();
                         labelLicznik.Visible = true;
                         labelLicznik.Text = "Liczba ruchów: " + g.LicznikRuchow;
+                        labelCzasGry.Text = "Czas Gry " + labelTime.Text;
+                        t.Stop();
+                        statystyki();
 
                         buttonSprawdz.Enabled = false;
                         buttonRestart.Enabled = true;
@@ -114,24 +141,15 @@ namespace GraGUI
             buttonRestart.Enabled = false;
             buttonPoddaj.Enabled = true;
 
-            labelOdpowiedz.Text = "Status";
+            labelOdpowiedz.Text = "";
             labelOdpowiedz.ForeColor = Color.Black;
             textBoxPropozycja.Clear();
 
             labelWylosowana.Visible = false;
             labelLicznik.Visible = false;
-        }
 
-        private void buttonInfo_Click(object sender, EventArgs e)
-        {
-            Info info = new Info();
-            info.Show();
-        }
-
-        private void buttonInstrukcja_Click(object sender, EventArgs e)
-        {
-            JakGrac jakGrac = new JakGrac();
-            jakGrac.Show();
+            labelTime.Text = "00:00:00";
+            timeSpan = new TimeSpan(0, 0, 0);
         }
 
         private void buttonPoddaj_Click(object sender, EventArgs e)
@@ -146,12 +164,36 @@ namespace GraGUI
             buttonSprawdz.Enabled = false;
             buttonPoddaj.Enabled = false;
             buttonRestart.Enabled = true;
+            t.Stop();
         }
 
         private void buttonHistoria_Click(object sender, EventArgs e)
         {
-            Historia historia = new Historia();
-            historia.Show();
+            statystyki();
+        }
+
+        private void buttonInfo_Click(object sender, EventArgs e)
+        {
+            Info info = new Info();
+            info.Show();
+        }
+
+        private void buttonInstrukcja_Click(object sender, EventArgs e)
+        {
+            JakGrac jakGrac = new JakGrac();
+            jakGrac.Show();
+        }
+
+        private void statystyki()
+        {
+            try
+            {
+                MessageBox.Show($@"Gra # {liczklik} Liczba Ruchów = {g.LicznikRuchow} Status: {g.Stan} CzasGry: {DateTime.Now}",
+                    "Twoje statystyki", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (NullReferenceException)
+            {
+            }
         }
     }
 }

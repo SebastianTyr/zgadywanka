@@ -38,6 +38,7 @@
             this.buttonHistoria = new System.Windows.Forms.Button();
             this.buttonInfo = new System.Windows.Forms.Button();
             this.groupBoxRozgrywka = new System.Windows.Forms.GroupBox();
+            this.labelCzasGry = new System.Windows.Forms.Label();
             this.labelLicznik = new System.Windows.Forms.Label();
             this.labelWylosowana = new System.Windows.Forms.Label();
             this.buttonSprawdz = new System.Windows.Forms.Button();
@@ -127,9 +128,9 @@
             // 
             this.buttonHistoria.Location = new System.Drawing.Point(12, 399);
             this.buttonHistoria.Name = "buttonHistoria";
-            this.buttonHistoria.Size = new System.Drawing.Size(75, 23);
+            this.buttonHistoria.Size = new System.Drawing.Size(93, 23);
             this.buttonHistoria.TabIndex = 2;
-            this.buttonHistoria.Text = "Historia";
+            this.buttonHistoria.Text = "Statystyki Gry";
             this.buttonHistoria.UseVisualStyleBackColor = true;
             this.buttonHistoria.Click += new System.EventHandler(this.buttonHistoria_Click);
             // 
@@ -145,6 +146,7 @@
             // 
             // groupBoxRozgrywka
             // 
+            this.groupBoxRozgrywka.Controls.Add(this.labelCzasGry);
             this.groupBoxRozgrywka.Controls.Add(this.labelLicznik);
             this.groupBoxRozgrywka.Controls.Add(this.labelWylosowana);
             this.groupBoxRozgrywka.Controls.Add(this.buttonSprawdz);
@@ -162,10 +164,18 @@
             this.groupBoxRozgrywka.Text = "Rozgrywka";
             this.groupBoxRozgrywka.Visible = false;
             // 
+            // labelCzasGry
+            // 
+            this.labelCzasGry.AutoSize = true;
+            this.labelCzasGry.Location = new System.Drawing.Point(15, 163);
+            this.labelCzasGry.Name = "labelCzasGry";
+            this.labelCzasGry.Size = new System.Drawing.Size(0, 13);
+            this.labelCzasGry.TabIndex = 9;
+            // 
             // labelLicznik
             // 
             this.labelLicznik.AutoSize = true;
-            this.labelLicznik.Location = new System.Drawing.Point(12, 160);
+            this.labelLicznik.Location = new System.Drawing.Point(12, 131);
             this.labelLicznik.Name = "labelLicznik";
             this.labelLicznik.Size = new System.Drawing.Size(81, 13);
             this.labelLicznik.TabIndex = 8;
@@ -175,7 +185,7 @@
             // labelWylosowana
             // 
             this.labelWylosowana.AutoSize = true;
-            this.labelWylosowana.Location = new System.Drawing.Point(12, 121);
+            this.labelWylosowana.Location = new System.Drawing.Point(12, 101);
             this.labelWylosowana.Name = "labelWylosowana";
             this.labelWylosowana.Size = new System.Drawing.Size(68, 13);
             this.labelWylosowana.TabIndex = 7;
@@ -215,20 +225,21 @@
             // 
             // labelTime
             // 
-            this.labelTime.Location = new System.Drawing.Point(256, 32);
+            this.labelTime.AutoSize = true;
+            this.labelTime.Location = new System.Drawing.Point(259, 38);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(100, 23);
+            this.labelTime.Size = new System.Drawing.Size(49, 13);
             this.labelTime.TabIndex = 3;
+            this.labelTime.Text = "00:00:00";
             this.labelTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelOdpowiedz
             // 
             this.labelOdpowiedz.AutoSize = true;
-            this.labelOdpowiedz.Location = new System.Drawing.Point(9, 80);
+            this.labelOdpowiedz.Location = new System.Drawing.Point(12, 70);
             this.labelOdpowiedz.Name = "labelOdpowiedz";
-            this.labelOdpowiedz.Size = new System.Drawing.Size(37, 13);
+            this.labelOdpowiedz.Size = new System.Drawing.Size(0, 13);
             this.labelOdpowiedz.TabIndex = 2;
-            this.labelOdpowiedz.Text = "Status";
             this.labelOdpowiedz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxPropozycja
@@ -237,6 +248,7 @@
             this.textBoxPropozycja.Name = "textBoxPropozycja";
             this.textBoxPropozycja.Size = new System.Drawing.Size(100, 20);
             this.textBoxPropozycja.TabIndex = 1;
+            this.textBoxPropozycja.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelPropozycja
             // 
@@ -300,6 +312,7 @@
         private System.Windows.Forms.Button buttonSprawdz;
         private System.Windows.Forms.Label labelLicznik;
         private System.Windows.Forms.Label labelWylosowana;
+        private System.Windows.Forms.Label labelCzasGry;
     }
 }
 
