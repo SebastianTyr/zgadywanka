@@ -188,7 +188,7 @@ namespace GraGUI
         {
             try
             {
-                MessageBox.Show($@"Gra # {liczklik} Liczba Ruchów = {g.LicznikRuchow} Status: {g.Stan} CzasGry: {DateTime.Now}",
+                MessageBox.Show($@"Liczba losowań: {liczklik} Liczba Ruchów = {g.LicznikRuchow} Status: {g.Stan} CzasGry: {DateTime.Now}",
                     "Twoje statystyki", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (NullReferenceException)
