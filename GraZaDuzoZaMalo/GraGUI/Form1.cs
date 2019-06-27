@@ -91,10 +91,17 @@ namespace GraGUI
             try
             {
                 p = int.Parse(textBoxPropozycja.Text);
+                int Do = int.Parse(textBoxZakresDo.Text);
+                if (p > Do) throw new OverflowException();
             }
             catch(FormatException)
             {
                 MessageBox.Show("Niepoprawny format danych!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxPropozycja.Clear();
+            }
+            catch(OverflowException)
+            {
+                MessageBox.Show("Propozycja wykracza poza zakres losowania!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBoxPropozycja.Clear();
             }
             Odp odp = g.Ocena(p);
