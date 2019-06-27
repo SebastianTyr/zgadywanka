@@ -1,8 +1,11 @@
 # Zgadywanka
 Projekt gry - studia (Gra za dużo za mało)
 
-#Krok 1 - wariant monolityczny
+Aplikacja tworzona i rozwijana podczas zajęć akademickich jako projekt zaliczeniowy drugiego semestru.
 
-#Krok 2 - wariant modularny
+Stworzona w trzech wariantach:
+- monolitycznym
+- proceduralnym
+- obiektowym
 
-#Krok 3 - wariant obiektowy
+Interfejs graficzny oparty o Windows Forms.
