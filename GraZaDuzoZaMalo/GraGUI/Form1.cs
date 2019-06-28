@@ -83,6 +83,20 @@ namespace GraGUI
                 buttonWylosuj.Enabled = true;
                 groupBoxRozgrywka.Visible = false;
             }
+            catch(OverflowException)
+            {
+                MessageBox.Show("Podana wartość jest za duża!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                textBoxZakresOd.Clear();
+                textBoxZakresDo.Clear();
+
+                t.Stop();
+                timeSpan = new TimeSpan(0, 0, 0);
+                labelTime.Text = "00:00:00";
+
+                buttonWylosuj.Enabled = true;
+                groupBoxRozgrywka.Visible = false;
+            }
             labelCzasGry.Text = "";
         }
 
