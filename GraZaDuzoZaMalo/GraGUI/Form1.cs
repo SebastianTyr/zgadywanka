@@ -48,6 +48,7 @@ namespace GraGUI
 
                 int Od = int.Parse(textBoxZakresOd.Text);
                 int Do = int.Parse(textBoxZakresDo.Text);
+                if (Od > Do) throw new ArgumentOutOfRangeException();
 
                 g = new Gra(Od, Do);
 
